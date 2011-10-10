@@ -16,7 +16,7 @@ class apache {
       owner   => root,
       group   => root,
       mode    => 660,
-      source  => "/etc/puppet/files/etc/httpd/conf/httpd.conf",
+      source  => "/vagrant/files/etc/httpd/conf/httpd.conf",
       require => [ Package[httpd] ]
   }
 

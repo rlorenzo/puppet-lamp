@@ -14,7 +14,7 @@ class mysql {
       owner   => root,
       group   => root,
       mode    => 660,
-      source  => "/etc/puppet/files/etc/my.cnf",
+      source  => "/vagrant/files/etc/my.cnf",
       require => [ Package[mysql-server] ]
   }
 
