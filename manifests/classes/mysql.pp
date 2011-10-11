@@ -1,7 +1,7 @@
 class mysql {
 
-  package { mysql: ensure => installed }
-  package { mysql-server: ensure => installed }
+  package { mysql: ensure => latest }
+  package { mysql-server: ensure => latest }
 
   service {
     mysqld:
