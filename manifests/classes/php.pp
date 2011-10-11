@@ -5,6 +5,9 @@ class php {
   package { php-mysql: ensure => installed }
   package { php-mssql: ensure => installed }
   package { php-odbc: ensure => installed }
+  package { gd: ensure => installed }
+  package { gd-devel: ensure => installed }
+  package { php-gd: ensure => installed }
 
   file { "/etc/php.ini":
       owner   => root,
