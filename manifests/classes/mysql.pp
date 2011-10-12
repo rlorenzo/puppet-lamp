@@ -1,13 +1,16 @@
 class mysql {
 
-  package { mysql: ensure => latest }
-  package { mysql-server: ensure => latest }
+  package { "mysql.x86_64": ensure => installed }
+  package { "mysql-libs.x86_64": ensure => installed }
+  package { "perl-DBD-mysql": ensure => installed }
+  package { "mysqlclient15.x86_64": ensure => installed }
+  package { "mysql-server.x86_64": ensure => installed }
 
   service {
     mysqld:
     enable    => true,
     ensure    => running,
-    subscribe => Package[mysql-server]
+    subscribe => Package["mysql-server.x86_64"]
   }
 
   file { "/etc/my.cnf":
@@ -15,7 +18,7 @@ class mysql {
       group   => root,
       mode    => 660,
       source  => "/vagrant/files/etc/my.cnf",
-      require => [ Package[mysql-server] ]
+      require => [ Package["mysql-server.x86_64"] ]
   }
 
 }

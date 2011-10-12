@@ -4,5 +4,6 @@ class lamp {
           git,
           apache,
           mysql,
-          php
+          php,
+          moodle
 }
