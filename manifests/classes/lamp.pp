@@ -4,7 +4,7 @@ class lamp {
           git,
           apache,
           mysql,
+          srdb,          
           php,
-          srdb,
           moodle
 }
