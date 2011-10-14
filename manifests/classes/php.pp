@@ -9,7 +9,7 @@ class php {
   package { gd-devel: ensure => installed }
   package { php-gd: ensure => installed }
   package { php-mbstring: ensure => installed } 
-  package { php-xml: ensure => installed }      
+  package { "php-xml.x86_64": ensure => installed }      
   package { php-soap: ensure => installed }     
   package { php-intl: ensure => installed }  
   package { php-xmlrpc: ensure => installed }   
