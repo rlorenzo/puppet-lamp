@@ -5,5 +5,6 @@ class lamp {
           apache,
           mysql,
           php,
+          srdb,
           moodle
 }
