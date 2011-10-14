@@ -2,7 +2,6 @@ class mysql {
 
   package { "mysql.x86_64": ensure => installed }
   package { "mysql-libs.x86_64": ensure => installed }
-  package { "perl-DBD-mysql": ensure => installed }
   package { "mysqlclient15.x86_64": ensure => installed }
   package { "mysql-server.x86_64": ensure => installed }
 
