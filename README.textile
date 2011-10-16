@@ -27,9 +27,9 @@ Setup webserver to access moodle
 
 Pre-moodle install setup
 * Create moodle database
-** mysql --user=root --execute='CREATE DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;'
+** mysql \--user=root \--execute='CREATE DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;'
 * Create moodle user and allow them to access moodle database (replace <PASSWORD> with something)
-** mysql --user=root --execute="GRANT ALL PRIVILEGES ON moodle.* TO 'moodle'@'localhost' IDENTIFIED BY '<PASSWORD>'; FLUSH PRIVILEGES;"
+** mysql \--user=root \--execute="GRANT ALL PRIVILEGES ON moodle.* TO 'moodle'@'localhost' IDENTIFIED BY '<PASSWORD>'; FLUSH PRIVILEGES;"
 
 Setup moodle
 * Go to localhost:8080/moodle and follow setup wizard
