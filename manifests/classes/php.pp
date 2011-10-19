@@ -22,4 +22,19 @@ class php {
       require => [ Package[php] ]
   }
 
+  # install apc
+  package { php-pear: ensure => installed }
+  package { "php-devel.x86_64": ensure => installed }
+  package { "httpd-devel.x86_64": ensure => installed }   
+  package { "pcre-devel.x86_64": ensure => installed }   
+
+  package { php-pecl-apc: ensure => installed }
+
+  file { "/etc/php.d/apc.ini":
+      owner   => root,
+      group   => root,
+      mode    => 660,
+      source  => "/vagrant/files/etc/apc.ini"
+  }
+
 }
