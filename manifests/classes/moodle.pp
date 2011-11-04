@@ -11,4 +11,7 @@ class moodle {
 		ensure => link,
 		target => "/vagrant/moodle"	
 	}
+	
+	# make sure aspell is installed
+	package { "aspell.x86_64": ensure => installed }  
 }
