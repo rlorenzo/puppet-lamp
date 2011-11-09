@@ -14,4 +14,8 @@ class moodle {
 	
 	# make sure aspell is installed
 	package { "aspell.x86_64": ensure => installed }  
+	
+	# although sendmail will not work, course creator fails
+	# if sendmail is not installed	
+	package { sendmail: ensure => installed }  
 }
