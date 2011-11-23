@@ -1,5 +1,6 @@
 class lamp {
   include build,
+  		  cron,
           svn,
           git,
           apache,

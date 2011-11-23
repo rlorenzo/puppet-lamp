@@ -18,4 +18,13 @@ class moodle {
 	# although sendmail will not work, course creator fails
 	# if sendmail is not installed	
 	package { sendmail: ensure => installed }  
+
+	# setup moodle cron
+	cron {
+		moodle_cron:
+			command => "/var/www/html/moodle/admin/cron.php",
+			user => vagrant,
+			minute => '*/30',
+			require => Service["vixie-cron"]
+	}	
 }
