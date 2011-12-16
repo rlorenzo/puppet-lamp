@@ -1,7 +1,7 @@
 class moodle {
 	# create directory to store moodle files
 	file { 
-   		'/vagrant/moodledata':
+   		'/opt/moodledata':
     	ensure => directory,
     	mode   => 0777,
 	}
