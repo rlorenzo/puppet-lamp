@@ -5,13 +5,6 @@ class moodle {
     	ensure => directory,
     	mode   => 0777,
 	}
-
-	# create directory to store moodle database
-	file { 
-   		'/vagrant/moodledb':
-    	ensure => directory,
-    	mode   => 0777,
-	}
 	
 	# create link to moodle source
 	file { "/var/www/html/moodle":
