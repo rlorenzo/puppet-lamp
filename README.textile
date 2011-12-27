@@ -12,15 +12,15 @@ Check out vagrant/puppet scripts that will be creating CCLE's centos box
 * git clone git://github.com/rlorenzo/puppet-lamp.git
 * mv puppet-lamp moodle20
 
-Running vagrant/puppet scripts to setup CCLE's centos box
-* vagrant box add vagrant-centos5.7-64-m2 https://m2dev.ccle.ucla.edu/rex/vagrant/vagrant-centos5.7-64-m2.box
-* cd  ~/Projects/moodle20
-* vagrant up
-
 Checkout CCLE 2.0 codebase from Github
 * cd  ~/Projects/moodle20
 * git clone git@github.com:ucla/moodle.git (if you have ssh keys setup)
 * git clone https://<github account>@github.com/ucla/moodle.git (if you want to type in your password)
+
+Running vagrant/puppet scripts to setup CCLE's centos box
+* vagrant box add vagrant-centos5.7-64-m2 https://m2dev.ccle.ucla.edu/rex/vagrant/vagrant-centos5.7-64-m2.box
+* cd  ~/Projects/moodle20
+* vagrant up
 
 Pre-moodle install setup
 * Create moodle database
