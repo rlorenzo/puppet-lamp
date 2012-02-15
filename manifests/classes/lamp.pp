@@ -7,5 +7,6 @@ class lamp {
           mysql,
           srdb,          
           php,
-          moodle
+          moodle,
+          tex
 }
