@@ -24,7 +24,7 @@ Running vagrant/puppet scripts to setup CCLE's centos box
 
 Pre-moodle install setup
 * Create moodle database
-** mysql --user=root --execute='CREATE DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;'
+** mysql --user=root --execute='CREATE DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;'
 * Create moodle user and allow them to access moodle database (replace <PASSWORD> with something)
 ** mysql --user=root --execute="GRANT ALL PRIVILEGES ON moodle.* TO 'moodle'@'localhost' IDENTIFIED BY '<PASSWORD>'; FLUSH PRIVILEGES;"
 
@@ -32,8 +32,42 @@ Setup moodle
 * Go to localhost:8080/moodle and follow setup wizard
 * Choose /opt/moodledata for the "Data Directory"
 * For database connection "Type" choose MySQLi
+* Enter in the database user/password you created above.
+* Next Moodle will say that it cannot create a config.php file and you will need to manually create it yourself. Please do the following:
+** On the vagrant box filesystem, for your moodle script directory, create a link to the dev configuration file
+*** Using the host computer
+*** cd ~/Projects/moodle20/moodle
+*** ln -s local/ucla/config/shared_dev_moodle-config.php
+** Then create a file called 'config_private.php' in the ~/Projects/moodle20/moodle directory with the database password and other details that Moodle prompted you to create for the configuration file.
+*** You can put other configuration data that should not go into version control in this file such as more passwords and salts.
 
-Follow post-install setup for UCLA-specific config settings at:
-* http://kb.ucla.edu/articles/locally-installing-cclemoodle-ucla-modified-code
-** Look for the section called "Add the ucla-specific config settings found in the production version"
+Also, here are some post-install instructions:
 
+Setting default theme
+# Go to Site administration > Appearance > Themes > Theme selector
+# Click "choose" for the  "default" row
+# Find "UCLA Theme" and then click "Use theme"
+# Click "Continue"
+
+Setting default format
+# Go to Site administration > Courses > Course default settings
+# For "Format" choose "UCLA Format"
+# Click "Save changes"
+
+Enabling Public/Private
+# Go to Site administration > Development > Experimental > Experimental settings
+# Enable "Enable group members only" by clicking on the checkbox
+# Click "Save changes"
+# Enable "Public/Private" by clicking on the checkbox
+# Click "Save changes" (yes, need to do this twice)  
+
+---
+To setup a 1.9 development environment, you can do the steps above, but change the following:
+* Use this image for the vagrant box
+**vagrant box add vagrant-centos5.7-64 https://m2dev.ccle.ucla.edu/rex/vagrant/vagrant-centos5.7-64.box
+* Edit Vagrantfile have this line instead:
+** config.vm.box = "vagrant-centos5.7-64"
+* Edit manifests > moodle.pp to have this line instead:
+** target => "/vagrant/moodle/moodle"
+* Edit files > etc > apc.ini to have this line instead:
+** apc.shm_size = 48
