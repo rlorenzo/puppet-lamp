@@ -55,18 +55,6 @@ Setting default theme
 # Find "UCLA Theme" and then click "Use theme"
 # Click "Continue"
 
-Setting default format
-# Go to Site administration > Courses > Course default settings
-# For "Format" choose "UCLA Format"
-# Click "Save changes"
-
-Enabling Public/Private
-# Go to Site administration > Development > Experimental > Experimental settings
-# Enable "Enable group members only" by clicking on the checkbox
-# Click "Save changes"
-# Enable "Public/Private" by clicking on the checkbox
-# Click "Save changes" (yes, need to do this twice)  
-
 ---
 To setup a 1.9 development environment, you can do the steps above, but change the following:
 * Use this image for the vagrant box
