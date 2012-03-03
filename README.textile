@@ -39,8 +39,7 @@ Setup moodle
 *** cd ~/Projects/moodle20/moodle
 *** ln -s local/ucla/config/shared_dev_moodle-config.php
 ** Then create a file called 'config_private.php' in the ~/Projects/moodle20/moodle directory with the database password and other details that Moodle prompted you to create for the configuration file. But be sure to remove the lines:
-bc.
-unset($CFG);
+bc. unset($CFG);
 global $CFG;
 $CFG = new stdClass();
 *** You can put other configuration data that should not go into version control in this file such as more passwords and salts.
