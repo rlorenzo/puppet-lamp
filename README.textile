@@ -37,7 +37,7 @@ Setup moodle
 ** On the vagrant box filesystem, for your moodle script directory, create a link to the dev configuration file
 *** Using the host computer
 *** cd ~/Projects/moodle20/moodle
-*** ln -s local/ucla/config/shared_dev_moodle-config.php
+*** ln -s local/ucla/config/shared_dev_moodle-config.php config.php
 ** Then create a file called 'config_private.php' in the ~/Projects/moodle20/moodle directory with the database password and other details that Moodle prompted you to create for the configuration file. 
 *** Be sure to remove the lines:
 unset($CFG);
