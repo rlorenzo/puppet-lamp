@@ -70,5 +70,6 @@ If you upgrade VirtualBox your Vagrant image might not be able to mount your dir
 
 * SSH into your vagrant image: vagrant ssh
 * Go to http://download.virtualbox.org/virtualbox/ and download the latest copy of VBoxGuestAdditions_X.iso for your version of VirtualBox onto /tmp
-* mount -o loop -t iso9660 /tmp/VBoxGuestAdditions_X.iso /mnt
-* sh /mnt/VBoxLinuxAdditions.run
+* As root:
+** mount -o loop -t iso9660 /tmp/VBoxGuestAdditions_X.iso /mnt
+** sh /mnt/VBoxLinuxAdditions.run
