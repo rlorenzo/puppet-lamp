@@ -1,6 +1,8 @@
 Introduction
 This project allows CCLE developers to automatically create a virtual image that is running the same LAMP stack that is being used for our Moodle 2.0 servers to help develop code in a production like environment.
 
+NOTE: Please make sure you have "Virtualization Technology" or the equivalent setting enabled on your computer's BIOS.
+
 Install VirtualBox
 https://www.virtualbox.org/
 
