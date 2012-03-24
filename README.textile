@@ -84,6 +84,7 @@ To setup a 1.9 development environment, you can do the steps above, but change t
 ** target => "/vagrant/moodle/moodle"
 * Edit files > etc > apc.ini to have this line instead:
 ** apc.shm_size = 48
+
 ---
 If you upgrade VirtualBox your Vagrant image might not be able to mount your directory, because you need to update your VirtualBox guest additions.
 
