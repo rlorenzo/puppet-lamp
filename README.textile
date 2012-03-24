@@ -57,6 +57,23 @@ Setting default theme
 # Find "UCLA Theme" and then click "Use theme"
 # Click "Continue"
 
+NOTES
+
+If you want to use a database dump that includes some pre-built courses and users please do the following:
+# Install
+## Download the database dump file at: https://m2.ccle.ucla.edu/rex/new_moodle_instance.sql
+## Dump your current moodle database and import the dump file
+## Change the salt of your configuraiton file to be: $CFG->passwordsaltmain = 'a_very_long_salt_string';
+# This database dump includes the following user accounts (login/pass):
+## admin/test
+## instructor/test
+## student/test
+# The database dump includes the following items:
+## roles copied from our pilot server
+## turned off most of the password requirements so that simple passwords can be used for test accounts
+## Life Science and English departments for 12W
+## Some Management courses for 12W
+
 ---
 To setup a 1.9 development environment, you can do the steps above, but change the following:
 * Use this image for the vagrant box
