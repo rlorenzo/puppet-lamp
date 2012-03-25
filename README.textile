@@ -63,7 +63,14 @@ If you want to use a database dump that includes some pre-built courses and user
 # Install
 ## Download the database dump file at: https://m2.ccle.ucla.edu/rex/new_moodle_instance.sql
 ## Dump your current moodle database and import the dump file
-## Change the salt of your configuraiton file to be: $CFG->passwordsaltmain = 'a_very_long_salt_string';
+### If you saved the database dump file to your ~/Projects/moodle20 directory, please ssh into your VM and do the following:
+#### cd /vagrant
+#### mysql -u root
+#### DROP DATABASE moodle;
+#### CREATE DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+#### USE moodle;
+#### SOURCE new_moodle_instance.sql
+## Change the salt of your configuration file to be: $CFG->passwordsaltmain = 'a_very_long_salt_string';
 # This database dump includes the following user accounts (login/pass):
 ## admin/test
 ## instructor/test
