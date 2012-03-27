@@ -1,4 +1,4 @@
-Introduction
+h3. Introduction
 This project allows CCLE developers to automatically create a virtual image that is running the same LAMP stack that is being used for our Moodle 2.0 servers to help develop code in a production like environment.
 
 NOTE: Please make sure you have "Virtualization Technology" or the equivalent setting enabled on your computer's BIOS.
@@ -57,7 +57,7 @@ Setting default theme
 # Find "UCLA Theme" and then click "Use theme"
 # Click "Continue"
 
-NOTES
+h3. NOTES
 
 If you want to use a database dump that includes some pre-built courses and users please do the following:
 # Install
@@ -100,3 +100,14 @@ If you upgrade VirtualBox your Vagrant image might not be able to mount your dir
 * As root:
 ** mount -o loop -t iso9660 /tmp/VBoxGuestAdditions_X.iso /mnt
 ** sh /mnt/VBoxLinuxAdditions.run
+
+---
+h3. Caveats for Windows users
+
+* Git Bash does not support symbolic links. After you do the step of "create a link to the dev configuration file" please 
+realize that you are essentially copying the file. Any updates made to the development configuration file will need to be 
+manually updated by you. Also, since the file is now a copy change the following line:
+** $_dirroot_ = dirname(realpath(__FILE__)) . '/../../..'; into $_dirroot_ = dirname(realpath(__FILE__));
+* You will not be able to "vagrant ssh" into your virtual machine. You will need to use putty to ssh. But before you can do 
+that you will need to convert the the vagrant ssh key into a putty ppk file. Please follow this link for more information: 
+http://wazem.blogspot.com/2007/11/how-to-convert-idrsa-keys-to-putty-ppk.html
