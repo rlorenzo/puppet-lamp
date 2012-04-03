@@ -86,7 +86,7 @@ If you want to install phpMyAdmin, please do the following on your VM
 ## Download the latest tar.gz version at: http://www.phpmyadmin.net/home_page/downloads.php
 # Unzip phpMyAdmin and move it to web directory
 ## tar -xvf phpMyAdmin-<version_number>.tar.gz
-## mv phpMyAdmin-<version_number> /var/www/html/phpmyadmin
+## sudo mv phpMyAdmin-<version_number> /var/www/html/phpmyadmin
 # Create and edit phpMyAdmin's configuration file to allow no passwords for the root account
 ## cd /var/www/html/phpmyadmin
 ## cp -p config.sample.inc.php config.inc.php
