@@ -48,6 +48,7 @@ $CFG = new stdClass();
 ...
 require_once(dirname(__FILE__) . '/lib/setup.php');
 *** You can put other configuration data that should not go into version control in this file such as more passwords and salts.
+**** Also include $CFG->divertallemailsto = '<your email address>';
 
 Also, here are some post-install instructions:
 
