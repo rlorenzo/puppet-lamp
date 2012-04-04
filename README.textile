@@ -17,7 +17,7 @@ Check out vagrant/puppet scripts that will be creating CCLE's centos box
 Checkout CCLE 2.0 codebase from Github
 * cd  ~/Projects/moodle20
 * git clone git@github.com:ucla/moodle.git (if you have ssh keys setup)
-* git clone https://<github account>@github.com/ucla/moodle.git (if you want to type in your password)
+* git clone https://&lt;github account&gt;@github.com/ucla/moodle.git (if you want to type in your password)
 
 Running vagrant/puppet scripts to setup CCLE's centos box
 * vagrant box add vagrant-centos5.7-64-m2 https://m2dev.ccle.ucla.edu/rex/vagrant/vagrant-centos5.7-64-m2.box
@@ -27,8 +27,8 @@ Running vagrant/puppet scripts to setup CCLE's centos box
 Pre-moodle install setup
 * Create moodle database
 ** mysql --user=root --execute='CREATE DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;'
-* Create moodle user and allow them to access moodle database (replace <PASSWORD> with something)
-** mysql --user=root --execute="GRANT ALL PRIVILEGES ON moodle.* TO 'moodle'@'localhost' IDENTIFIED BY '<PASSWORD>'; FLUSH PRIVILEGES;"
+* Create moodle user and allow them to access moodle database (replace &lt;PASSWORD&gt; with something)
+** mysql --user=root --execute="GRANT ALL PRIVILEGES ON moodle.* TO 'moodle'@'localhost' IDENTIFIED BY '&lt;PASSWORD&gt;'; FLUSH PRIVILEGES;"
 
 Setup moodle
 * Go to localhost:8080/moodle and follow setup wizard
@@ -48,12 +48,12 @@ $CFG = new stdClass();
 ...
 require_once(dirname(__FILE__) . '/lib/setup.php');
 *** You can put other configuration data that should not go into version control in this file such as more passwords and salts.
-**** Also include $CFG->divertallemailsto = '<your email address>';
+**** Also include $CFG-&gt;divertallemailsto = '&lt;your email address&gt;';
 
 Also, here are some post-install instructions:
 
 Setting default theme
-# Go to Site administration > Appearance > Themes > Theme selector
+# Go to Site administration &gt; Appearance &gt; Themes &gt; Theme selector
 # Click "choose" for the  "default" row
 # Find "UCLA Theme" and then click "Use theme"
 # Click "Continue"
@@ -71,7 +71,7 @@ If you want to use a database dump that includes some pre-built courses and user
 #### CREATE DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 #### USE moodle;
 #### SOURCE new_moodle_instance.sql
-## Change the salt of your configuration file to be: $CFG->passwordsaltmain = 'a_very_long_salt_string';
+## Change the salt of your configuration file to be: $CFG-&gt;passwordsaltmain = 'a_very_long_salt_string';
 # This database dump includes the following user accounts (login/pass):
 ## admin/test
 ## instructor/test
@@ -86,8 +86,8 @@ If you want to install phpMyAdmin, please do the following on your VM
 # Download phpMyAdmin to /tmp
 ## Download the latest tar.gz version at: http://www.phpmyadmin.net/home_page/downloads.php
 # Unzip phpMyAdmin and move it to web directory
-## tar -xvf phpMyAdmin-<version_number>.tar.gz
-## sudo mv phpMyAdmin-<version_number> /var/www/html/phpmyadmin
+## tar -xvf phpMyAdmin-&lt;version_number&gt;.tar.gz
+## sudo mv phpMyAdmin-&lt;version_number&gt; /var/www/html/phpmyadmin
 # Create and edit phpMyAdmin's configuration file to allow no passwords for the root account
 ## cd /var/www/html/phpmyadmin
 ## cp -p config.sample.inc.php config.inc.php
@@ -100,9 +100,9 @@ To setup a 1.9 development environment, you can do the steps above, but change t
 **vagrant box add vagrant-centos5.7-64 https://m2dev.ccle.ucla.edu/rex/vagrant/vagrant-centos5.7-64.box
 * Edit Vagrantfile have this line instead:
 ** config.vm.box = "vagrant-centos5.7-64"
-* Edit manifests > moodle.pp to have this line instead:
-** target => "/vagrant/moodle/moodle"
-* Edit files > etc > apc.ini to have this line instead:
+* Edit manifests &gt; moodle.pp to have this line instead:
+** target =&gt; "/vagrant/moodle/moodle"
+* Edit files &gt; etc &gt; apc.ini to have this line instead:
 ** apc.shm_size = 48
 
 ---
