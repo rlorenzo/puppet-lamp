@@ -58,6 +58,18 @@ Setting default theme
 # Find "UCLA Theme" and then click "Use theme"
 # Click "Continue"
 
+Install US English language pack
+# Go to Site administration > Language > Language packs
+## Under list of available languages choose "English - United States (en_us)" and click "Install selected language pack"
+# Go to Site administration > Language > Language settings
+## Select "English - United States (en_us)" for "Default language"
+## Click "Save changes"
+# Change everyone's default language to en_us
+## Run SQL query: UPDATE `mdl_user` SET lang='en_us' WHERE lang='en';
+
+Seeding data
+# Import sql files in local/ucla/db/seed_data into your Moodle database
+
 h3. NOTES
 
 If you want to use a database dump that includes some pre-built courses and users please do the following:
