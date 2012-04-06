@@ -11,8 +11,7 @@ http://vagrantup.com/docs/getting-started/index.html
 
 Check out vagrant/puppet scripts that will be creating CCLE's centos box
 * cd ~/Projects
-* git clone git://github.com/rlorenzo/puppet-lamp.git
-* mv puppet-lamp moodle20
+* git clone git://github.com/rlorenzo/puppet-lamp.git moodle20
 
 Checkout CCLE 2.0 codebase from Github
 * cd  ~/Projects/moodle20
