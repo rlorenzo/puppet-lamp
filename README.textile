@@ -111,9 +111,9 @@ To setup a 1.9 development environment, you can do the steps above, but change t
 **vagrant box add vagrant-centos5.7-64 https://m2dev.ccle.ucla.edu/rex/vagrant/vagrant-centos5.7-64.box
 * Edit Vagrantfile have this line instead:
 ** config.vm.box = "vagrant-centos5.7-64"
-* Edit manifests &gt; moodle.pp to have this line instead:
+* Edit manifests/classes/moodle.pp to have this line instead:
 ** target =&gt; "/vagrant/moodle/moodle"
-* Edit files &gt; etc &gt; apc.ini to have this line instead:
+* Edit files/etc/apc.ini to have this line instead:
 ** apc.shm_size = 48
 
 ---
