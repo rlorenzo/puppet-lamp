@@ -8,5 +8,6 @@ class lamp {
           srdb,          
           php,
           moodle,
-          tex
+          tex,
+          clamav
 }
