@@ -9,5 +9,6 @@ class lamp {
           php,
           moodle,
           tex,
-          clamav
+          clamav,
+		  phpmyadmin          
 }
