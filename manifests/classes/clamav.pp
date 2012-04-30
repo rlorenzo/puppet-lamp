@@ -11,6 +11,7 @@ class clamav {
   # make sure newest virus definitions are installed
   exec { "freshclam":
       command => "freshclam",
-      path    => "/usr/bin/",      
+      path    => "/usr/bin/",   
+      require => Service["clamd"]   
   }    
 }
