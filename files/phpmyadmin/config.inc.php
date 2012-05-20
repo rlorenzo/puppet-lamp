@@ -69,6 +69,11 @@ $cfg['UploadDir'] = '';
 $cfg['SaveDir'] = '';
 
 /**
+ * Defines authentication timeout
+ */
+$cfg['LoginCookieValidity'] = 86400;
+
+/**
  * Defines whether a user should be displayed a "show all (records)"
  * button in browse mode or not.
  * default = false
@@ -80,7 +85,7 @@ $cfg['SaveDir'] = '';
  * set contains more rows, "Previous" and "Next".
  * default = 30
  */
-//$cfg['MaxRows'] = 50;
+$cfg['MaxRows'] = 100;
 
 /**
  * Use graphically less intense menu tabs
@@ -127,7 +132,7 @@ $cfg['SaveDir'] = '';
  * This requires configuration storage enabled, see above.
  * default = false
  */
-//$cfg['QueryHistoryDB'] = true;
+$cfg['QueryHistoryDB'] = true;
 
 /**
  * When using DB-based query history, how many entries should be kept?
