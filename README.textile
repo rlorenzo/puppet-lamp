@@ -24,6 +24,7 @@ Running vagrant/puppet scripts to setup CCLE's centos box
 * vagrant up
 
 Pre-moodle install setup
+* First ssh into the vagrant image: vagrant ssh
 * Create moodle database
 ** ```mysql --user=root --execute='CREATE DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;'```
 * Create moodle user and allow them to access moodle database (replace &lt;PASSWORD&gt; with something)
