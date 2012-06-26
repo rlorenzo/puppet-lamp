@@ -19,8 +19,6 @@ Checkout CCLE 2.0 codebase from Github
 * git clone https://&lt;github account&gt;@github.com/ucla/moodle.git (if you want to type in your password)
 
 Running vagrant/puppet scripts to setup CCLE's centos box
-* vagrant box add vagrant-centos5.7-64-m2 https://m2dev.ccle.ucla.edu/rex/vagrant/vagrant-centos5.7-64-m2.box
-* cd  ~/Projects/moodle20
 * vagrant up
 
 Pre-moodle install setup
