@@ -23,7 +23,7 @@ class moodle {
 	# setup moodle cron
 	cron {
 		moodle_cron:
-			command => "/var/www/html/moodle/admin/cron.php",
+			command => "/usr/bin/php /var/www/html/moodle/admin/cron.php",
 			user => vagrant,
 			minute => '*/30',
 			require => Service["vixie-cron"]
