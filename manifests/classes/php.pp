@@ -34,7 +34,16 @@ class php {
       owner   => root,
       group   => root,
       mode    => 660,
-      source  => "/vagrant/files/etc/apc.ini"
+      source  => "/vagrant/files/etc/php.d/apc.ini"
   }
-
+  
+  # install xdebug
+  package { php-pecl-xdebug: ensure => installed }  
+  
+  file { "/etc/php.d/xdebug.ini":
+      owner   => root,
+      group   => root,
+      mode    => 660,
+      source  => "/vagrant/files/etc/php.d/xdebug.ini"
+  }
 }
