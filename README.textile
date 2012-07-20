@@ -89,10 +89,9 @@ If you want to use a database dump that includes some pre-built courses and user
 ## instructor/test
 ## student/test
 # The database dump includes the following items:
-## roles copied from our pilot server
+## roles copied from our production server
 ## turned off most of the password requirements so that simple passwords can be used for test accounts
-## Life Science and English departments for 12W
-## Some Management courses for 12W
+## Some recent courses
 
 ---
 To setup a 1.9 development environment, you can do the steps above, but change the following:
