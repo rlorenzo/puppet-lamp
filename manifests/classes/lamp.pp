@@ -10,5 +10,6 @@ class lamp {
           moodle,
           tex,
           clamav,
+          phpunit,
 		  phpmyadmin          
 }
