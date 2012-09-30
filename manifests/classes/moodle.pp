@@ -5,6 +5,13 @@ class moodle {
     	ensure => directory,
     	mode   => 0777,
 	}
+
+	# create directory to store moodle phpunit files
+	file { 
+   		'/opt/phpu_moodledata':
+    	ensure => directory,
+    	mode   => 0777,
+	}
 	
 	# create link to moodle source
 	file { "/var/www/html/moodle":
