@@ -7,7 +7,7 @@ Install VirtualBox
 https://www.virtualbox.org/
 
 Install Vagrant by following the guide at this website:
-http://vagrantup.com/docs/getting-started/index.html
+http://vagrantup.com/v1/docs/getting-started/index.html
 
 Check out vagrant/puppet scripts that will be creating CCLE's centos box
 * cd ~/Projects
