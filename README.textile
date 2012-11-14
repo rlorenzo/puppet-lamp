@@ -101,13 +101,6 @@ If you want to use a database dump that includes some pre-built courses and user
 ## Some recent courses
 
 ---
-PHPunit problems
-
-For some reason, sometimes PHPunit doesn't install from the puppet scripts. Please manually install PHPunit by sshing into the VM and running the following command:
-
-/usr/bin/pear install --alldeps phpunit/PHPUnit 
-
----
 To setup a 1.9 development environment, you can do the steps above, but change the following:
 * Use this image for the vagrant box
 **vagrant box add vagrant-centos5.7-64 https://m2dev.ccle.ucla.edu/rex/vagrant/vagrant-centos5.7-64.box
