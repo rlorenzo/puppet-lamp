@@ -76,7 +76,10 @@ sudo pear config-set auto_discover 1
 sudo pear install pear.phpunit.de/PHPUnit
 sudo pear install --alldeps phpunit/DbUnit
 
-Then in your config_private.php file, please add: $CFG->phpunit_dataroot = '/opt/phpu_moodledata';
+Then in your config_private.php file, please add: 
+
+$CFG->phpunit_dataroot = '/opt/phpu_moodledata';
+$CFG->phpunit_prefix = 'phpu_';
 
 h3. NOTES
 
