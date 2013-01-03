@@ -22,6 +22,9 @@ class moodle {
 	# make sure aspell is installed
 	package { "aspell.x86_64": ensure => installed }  
 	
+	# install ghostscript (it is needed for PDF submission assignment type)
+	package { "ghostscript.x86_64": ensure => installed }  
+	
 	# course creator fails if sendmail is not installed	
 	# NOTE: This means that the VM can potentially send email out
 	# Please use caution when using scripts that send out email
