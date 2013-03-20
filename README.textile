@@ -17,6 +17,8 @@ Checkout CCLE 2.0 codebase from Github
 * cd  ~/Projects/moodle20
 * git clone git@github.com:ucla/moodle.git (if you have ssh keys setup)
 * git clone https://&lt;github account&gt;@github.com/ucla/moodle.git (if you want to type in your password)
+* git submodule init
+* git submodule update
 
 Running vagrant/puppet scripts to setup CCLE's centos box
 * vagrant up
