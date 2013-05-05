@@ -1,15 +1,11 @@
 class lamp {
   include build,
-  		  cron,
-          svn,
-          git,
+          php,
           apache,
           mysql,
-          srdb,          
-          php,
+          srdb,    
           moodle,
           tex,
           clamav,
-          phpunit,
-		  phpmyadmin          
+		  phpmyadmin      
 }

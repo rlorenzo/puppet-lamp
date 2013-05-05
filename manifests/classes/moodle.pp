@@ -30,12 +30,12 @@ class moodle {
 	# Please use caution when using scripts that send out email
 	package { sendmail: ensure => installed }  
 
-	# setup moodle cron
-	cron {
-		moodle_cron:
-			command => "/usr/bin/php /vagrant/moodle/admin/cli/cron.php",
-			user => vagrant,
-			minute => '*/30',
-			require => Service["vixie-cron"]
-	}	
+#	# setup moodle cron
+#	cron {
+#		moodle_cron:
+#			command => "/usr/bin/php /vagrant/moodle/admin/cli/cron.php",
+#			user => vagrant,
+#			minute => '*/30',
+#			require => Service["vixie-cron"]
+#	}	
 }

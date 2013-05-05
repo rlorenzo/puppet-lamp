@@ -4,11 +4,11 @@ Vagrant::Config.run do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "vagrant-centos5.7-64-m2"
+  config.vm.box = "vagrant-centos6.4-64"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "https://m2dev.ccle.ucla.edu/rex/vagrant/vagrant-centos5.7-64-m2.box"
+  config.vm.box_url = "https://m2dev.ccle.ucla.edu/rex/vagrant/vagrant-centos6.4-64.box"
 
   # Boot with a GUI so you can see the screen. (Default is headless)
   # config.vm.boot_mode = :gui

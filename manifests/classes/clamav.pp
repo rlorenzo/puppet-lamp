@@ -1,11 +1,11 @@
-# Installs and setups clamav
+# Install and setup clamav
 class clamav {
-	package { "clamd": ensure => installed }
+  package { "clamd": ensure => installed }
 	
-  service {
-    clamd:
-    enable    => true,
-    ensure    => running
+  service { 'clamd':
+      enable    => true,
+      ensure    => running,
+      require   => Package['clamd']
   }	
   
   # make sure newest virus definitions are installed
