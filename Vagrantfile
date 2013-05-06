@@ -8,7 +8,8 @@ Vagrant::Config.run do |config|
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "https://m2dev.ccle.ucla.edu/rex/vagrant/vagrant-centos6.4-64.box"
+  config.vm.box_url = "https://test.ccle.ucla.edu/vagrant/vagrant-centos6.4-64.box"
+
 
   # Boot with a GUI so you can see the screen. (Default is headless)
   # config.vm.boot_mode = :gui
