@@ -46,7 +46,7 @@ unset($CFG);
 global $CFG;
 $CFG = new stdClass();
 ...
-require_once(dirname(FILE) . ‘/lib/setup.php’);
+require_once(dirname(FILE) . '/lib/setup.php');
 ```
    * You can put other configuration data that should not go into version control in this file such as more passwords and salts.
    * **Also include $CFG->divertallemailsto = ‘<your email address>’;**
