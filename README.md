@@ -62,10 +62,12 @@ require_once(dirname(FILE) . ‘/lib/setup.php’);
       * roles copied from our production server
       * turned off most of the password requirements so that simple passwords can be used for test accounts
       * pre-built courses
+8. Install PHPUnit by following the directions at http://docs.moodle.org/dev/PHPUnit#Installation_of_PHPUnit_via_Composer
 
 ### NOTES
 1. phpMyAdmin is viewable at: http://localhost:8080/phpmyadmin
-2. If you upgrade VirtualBox your Vagrant image might not be able to mount your directory, because you need to update your VirtualBox guest additions.
+2. You can gain root access by doing: sudo su -
+3. If you upgrade VirtualBox your Vagrant image might not be able to mount your directory, because you need to update your VirtualBox guest additions.
    * SSH into your vagrant image: vagrant ssh
    * Go to http://download.virtualbox.org/virtualbox/ and download the latest copy of VBoxGuestAdditions\_X.iso for your version of VirtualBox onto /tmp
    * As root (sudo su -):
