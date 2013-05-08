@@ -72,8 +72,9 @@ require_once(dirname(FILE) . '/lib/setup.php');
 
 ### NOTES
 1. phpMyAdmin is viewable at: http://localhost:8080/phpmyadmin
-2. You can gain root access by doing: sudo su -
-3. If you upgrade VirtualBox your Vagrant image might not be able to mount your directory, because you need to update your VirtualBox guest additions.
+2. Your code on the Vagrant VM is located at /vagrant/moodle
+3. You can gain root access by doing: sudo su -
+4. If you upgrade VirtualBox your Vagrant image might not be able to mount your directory, because you need to update your VirtualBox guest additions.
    * SSH into your vagrant image: vagrant ssh
    * Go to http://download.virtualbox.org/virtualbox/ and download the latest copy of VBoxGuestAdditions\_X.iso for your version of VirtualBox onto /tmp
    * As root (sudo su -):
