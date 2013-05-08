@@ -39,6 +39,8 @@ This project allows CCLE developers to automatically create a virtual image that
       * cd ~/Projects/ccle/moodle
       * ln -s local/ucla/config/shared_dev_moodle-config.php config.php
 6. Then create a file called ‘config_private.php’ in the ~/Projects/ccle/moodle directory with the database password and other details that Moodle prompted you to create for the configuration file.
+   * You can put other configuration data that should not go into version control in this file such as more passwords and salts.
+   * **Also include $CFG->divertallemailsto = ‘<your email address>’;**
    * Be sure to remove the lines:
 
 ```php
@@ -46,13 +48,17 @@ unset($CFG);
 global $CFG;
 $CFG = new stdClass();
 ...
-require_once(dirname(FILE) . ‘/lib/setup.php’);
+require_once(dirname(FILE) . '/lib/setup.php');
 ```
-   * You can put other configuration data that should not go into version control in this file such as more passwords and salts.
-   * **Also include $CFG->divertallemailsto = ‘<your email address>’;**
+
 7. Import a sample database dump that includes prebuild courses, config settings, roles, and a set of test users.
-   * vagrant ssh
-   * mysql -u root -D moodle -o < wget https://test.ccle.ucla.edu/vagrant/new_moodle_instance.sql
+   * Run the following commands to import the database dump:
+      * vagrant ssh
+      * cd /tmp && wget https://test.ccle.ucla.edu/vagrant/new_moodle_instance.sql
+      * mysql -u root 
+      * use moodle;
+      * source new_moodle_instance.sql;
+      * exit;
    * Change the salt of your config_private.php file to be: $CFG->passwordsaltmain = ‘a_very_long_salt_string’;
    * This database dump includes the following user accounts (login/pass):
       * admin/test
@@ -62,10 +68,13 @@ require_once(dirname(FILE) . ‘/lib/setup.php’);
       * roles copied from our production server
       * turned off most of the password requirements so that simple passwords can be used for test accounts
       * pre-built courses
+8. Install PHPUnit by following the directions at http://docs.moodle.org/dev/PHPUnit#Installation_of_PHPUnit_via_Composer
 
 ### NOTES
 1. phpMyAdmin is viewable at: http://localhost:8080/phpmyadmin
-2. If you upgrade VirtualBox your Vagrant image might not be able to mount your directory, because you need to update your VirtualBox guest additions.
+2. Your code on the Vagrant VM is located at /vagrant/moodle
+3. You can gain root access by doing: sudo su -
+4. If you upgrade VirtualBox your Vagrant image might not be able to mount your directory, because you need to update your VirtualBox guest additions.
    * SSH into your vagrant image: vagrant ssh
    * Go to http://download.virtualbox.org/virtualbox/ and download the latest copy of VBoxGuestAdditions\_X.iso for your version of VirtualBox onto /tmp
    * As root (sudo su -):
