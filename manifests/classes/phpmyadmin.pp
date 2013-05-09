@@ -27,7 +27,7 @@ class phpmyadmin {
    	owner   => root,
    	group   => root,
    	mode    => 644,
-   	source  => "/vagrant/files/phpmyadmin/phpMyAdmin.conf",
+   	source  => "/vagrant/files/phpmyadmin/phpmyadmin.conf",
    	require => Package["phpMyAdmin"],
    	notify	=> Service["httpd"],
   }  	

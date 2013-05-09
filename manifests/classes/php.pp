@@ -36,7 +36,6 @@ class php {
       mode    => 660,
       source  => "/vagrant/files/etc/php.d/apc.ini",
       require => Package['php-pecl-apc'],
-      notify  => Service["httpd"],
   }
   
   # install xdebug
@@ -48,6 +47,5 @@ class php {
       mode    => 660,
       source  => "/vagrant/files/etc/php.d/xdebug.ini",
       require => Package['php-pecl-xdebug'],
-      notify  => Service["httpd"],
   }
 }
