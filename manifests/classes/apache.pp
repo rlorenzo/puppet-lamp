@@ -1,9 +1,7 @@
 class apache {
-
   package { httpd: ensure => installed }
   package { httpd-devel: ensure => installed }
   package { mod_ssl: ensure => installed }
-
 
   service {
     httpd:
@@ -19,5 +17,4 @@ class apache {
       source  => "/vagrant/files/etc/httpd/conf/httpd.conf",
       require => [ Package[httpd] ]
   }
-
 }

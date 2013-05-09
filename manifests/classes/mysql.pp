@@ -1,5 +1,4 @@
 class mysql {
-
   package { "mysql.x86_64": ensure => installed }
   package { "mysql-libs.x86_64": ensure => installed }
   package { "mysql-server.x86_64": ensure => installed }
@@ -16,7 +15,7 @@ class mysql {
       group   => root,
       mode    => 660,
       source  => "/vagrant/files/etc/my.cnf",
-      require => [ Package["mysql-server.x86_64"] ]
+      require => [ Package["mysql-server.x86_64"] ],
+      notify  => Service["mysqld"],
   }
-
 }

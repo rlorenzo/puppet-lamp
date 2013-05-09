@@ -13,7 +13,6 @@ class phpmyadmin {
       unless  => "yum list installed | grep phpMyAdmin | wc -l"
   }  
 	
-	
   # make sure that config file is set
   file { "/etc/phpMyAdmin/config.inc.php":
     owner   => root,
@@ -29,6 +28,7 @@ class phpmyadmin {
    	group   => root,
    	mode    => 644,
    	source  => "/vagrant/files/phpmyadmin/phpMyAdmin.conf",
-   	require => Package["phpMyAdmin"]
+   	require => Package["phpMyAdmin"],
+   	notify	=> Service["httpd"],
   }  	
 }
