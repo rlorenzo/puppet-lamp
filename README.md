@@ -1,15 +1,15 @@
 ### Introduction
-This project allows CCLE developers to automatically create a virtual image that is running the same LAMP stack that is being used for our Moodle 2 servers to help develop code in a production like environment.
+This project allows CCLE developers to automatically create a virtual machine that is running the same LAMP stack that is being used for our Moodle 2 servers to help develop code in a production like environment.
 
 ### Prerequisites
 * Please make sure you have “Virtualization Technology” or the equivalent setting enabled on your computer’s BIOS.
 * Install VirtualBox 4.2.12: https://www.virtualbox.org/wiki/Downloads
 * Install Vagrant 1.2.2: http://downloads.vagrantup.com
-* Access to the CCLE codebase. Note, you can use this Vagrant image for vanilla Moodle, just ignore or skip the steps related to the CCLE codebase.
+* Access to the CCLE codebase. Note, you can use this Vagrant VM for vanilla Moodle, just ignore or skip the steps related to the CCLE codebase.
     * Make sure you are using SSH keys to access to the CCLE codebase: https://help.github.com/articles/generating-ssh-keys   
 
-### Download and setup dev image
-1. Check out vagrant/puppet scripts that will be creating CCLE’s centos box
+### Download and setup VM
+1. Check out vagrant and puppet scripts that will create the Dev VM
     * mkdir ~/Projects && cd ~/Projects
     * git clone git://github.com/rlorenzo/puppet-lamp.git ccle
 2. Checkout CCLE the codebase from Github
@@ -17,11 +17,11 @@ This project allows CCLE developers to automatically create a virtual image that
     * git clone git@github.com:ucla/moodle.git
     * cd moodle
     * git submodule init && git submodule update
-3. Runn the vagrant/puppet scripts to setup the CCLE dev image
+3. Start vagrant and run the puppet scripts
    * vagrant up
 
 ### Pre-moodle install
-1. First ssh into the vagrant image: 
+1. First ssh into the Vagrant VM: 
    * vagrant ssh
 2. Create moodle database
    * mysql --user=root --execute="CREATE DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
@@ -55,22 +55,22 @@ This project allows CCLE developers to automatically create a virtual image that
 5. On your host machine, go to http://localhost:8080/moodle and start using the CCLE Moodle codebase.
 
 ### NOTES
-1. To shutdown the vagrant please run "vagrant suspend" (it is quicker than doing vagrant halt). To start up vagrant again run "vagrant up". To restart the image, run "vagrant reload".
+1. To shutdown the vagrant please run "vagrant suspend" (it is quicker than doing vagrant halt). To start up vagrant again run "vagrant up". To restart the VM, run "vagrant reload".
 2. phpMyAdmin is viewable at: http://localhost:8080/phpmyadmin
 3. Your code on the Vagrant VM is located at /vagrant/moodle
 4. You can gain root access by doing: sudo su -
-5. If you upgrade VirtualBox your Vagrant image might not be able to mount your directory, because you need to update your VirtualBox guest additions.
-   * SSH into your vagrant image: vagrant ssh
+5. If you upgrade VirtualBox your Vagrant VM might not be able to mount your directory, because you need to update your VirtualBox guest additions.
+   * SSH into your Vagrant VM: vagrant ssh
    * Go to http://download.virtualbox.org/virtualbox/ and download the latest copy of VBoxGuestAdditions\_X.iso for your version of VirtualBox onto /tmp
    * As root (sudo su -):
       * mount -o ro -t iso9660 /tmp/VBoxGuestAdditions\_X.iso /mnt
       * sh /mnt/VBoxLinuxAdditions.run
 
 ### Caveats for Windows users
-* Git Bash does not support symbolic links. After you do the step of “create a link to the dev configuration file” please     realize that you are essentially copying the file. Any updates made to the development configuration file will need to be     manually updated by you. Also, since the file is now a copy change the following line:
+* Git Bash does not support symbolic links. After you do the step of “create a link to the dev configuration file” please realize that you are essentially copying the file. Any updates made to the development configuration file will need to be manually updated by you. Also, since the file is now a copy change the following line:
 
    ```php
     $_dirroot_ = dirname(realpath(__FILE__)) . '/../../..'; into
     $_dirroot_ = dirname(realpath(__FILE__));
    ```
-* You will not be able to “vagrant ssh” into your virtual machine. You will need to use putty to ssh. But before you can do     that you will need to convert the the vagrant ssh key into a putty ppk file. Please follow this link for more information:     http://wazem.blogspot.com/2007/11/how-to-convert-idrsa-keys-to-putty-ppk.html
+* You will not be able to “vagrant ssh” into your Vagrant VM. You will need to use putty to ssh. But before you can do that you will need to convert the the vagrant ssh key into a putty ppk file. Please follow this link for more information: http://wazem.blogspot.com/2007/11/how-to-convert-idrsa-keys-to-putty-ppk.html
