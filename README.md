@@ -40,7 +40,7 @@ This project allows CCLE developers to automatically create a virtual image that
       * ln -s local/ucla/config/shared_dev_moodle-config.php config.php
 6. Then create a file called ‘config_private.php’ in the ~/Projects/ccle/moodle directory with the database password and other details that Moodle prompted you to create for the configuration file.
    * You can put other configuration data that should not go into version control in this file such as more passwords and salts.
-   * **Also include $CFG->divertallemailsto = ‘<your email address>’;**
+   * **Also include $CFG->divertallemailsto = ‘[your email address]’;**
    * Be sure to remove the lines:
 
 ```php
@@ -69,6 +69,10 @@ require_once(dirname(FILE) . '/lib/setup.php');
       * turned off most of the password requirements so that simple passwords can be used for test accounts
       * pre-built courses
 8. Install PHPUnit by following the directions at http://docs.moodle.org/dev/PHPUnit#Installation_of_PHPUnit_via_Composer
+   * Add the following to your config_private.php file:
+      * $CFG->phpunit_prefix = 'phpu_';
+      * $CFG->phpunit_dataroot = '/opt/phpu_moodledata';
+9. On your host machine, go to http://localhost:8080/moodle and start using the CCLE Moodle codebase.
 
 ### NOTES
 1. To shutdown the vagrant please run "vagrant suspend" (it is quicker than doing vagrant halt). To start up vagrant again run "vagrant up". To restart the image, run "vagrant reload".
