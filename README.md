@@ -30,16 +30,11 @@ This project allows CCLE developers to automatically create a virtual image that
       * Can replace 'test' with any other password you want to use.
 
 ### Setup CCLE version of Moodle
-1. Go to localhost:8080/moodle/install.php and follow setup wizard
-2. Choose /opt/moodledata for the “Data Directory”
-3. For database connection “Type” choose MySQLi
-4. Enter in the database user/password you created above, which could be moodle/test
-5. Next Moodle will say that it cannot create a config.php file and you will need to manually create it yourself. Please do the following:
-   * On the host computer, create a link to the dev configuration file
+1. On the host computer, create a link to the dev configuration file
       * cd ~/Projects/ccle/moodle
       * ln -s local/ucla/config/shared_dev_moodle-config.php config.php
-6. Then copy the file config_private-dist.php to config_private.php and change the dbuser/dbpass/wwroot/dataroot variables to the appropiate values if you are not using the default options.
-7. Import a sample database dump that includes prebuild courses, config settings, roles, and a set of test users.
+2. Then copy the file config_private-dist.php to config_private.php and change the dbuser/dbpass/wwroot/dataroot variables to the appropiate values if you are not using the default options.
+3. Import a sample database dump that includes prebuild courses, config settings, roles, and a set of test users.
    * Run the following commands to import the database dump:
       * vagrant ssh
       * cd /tmp && wget https://test.ccle.ucla.edu/vagrant/new_moodle_instance.sql
@@ -55,9 +50,9 @@ This project allows CCLE developers to automatically create a virtual image that
       * roles copied from our production server
       * turned off most of the password requirements so that simple passwords can be used for test accounts
       * pre-built courses
-8. Install PHPUnit by following the directions at http://docs.moodle.org/dev/PHPUnit#Installation_of_PHPUnit_via_Composer
+4. Install PHPUnit by following the directions at http://docs.moodle.org/dev/PHPUnit#Installation_of_PHPUnit_via_Composer
    * Note: To run phpunit tests, you will need to be in your Vagrant VM and in your moodle directory.
-9. On your host machine, go to http://localhost:8080/moodle and start using the CCLE Moodle codebase.
+5. On your host machine, go to http://localhost:8080/moodle and start using the CCLE Moodle codebase.
 
 ### NOTES
 1. To shutdown the vagrant please run "vagrant suspend" (it is quicker than doing vagrant halt). To start up vagrant again run "vagrant up". To restart the image, run "vagrant reload".
