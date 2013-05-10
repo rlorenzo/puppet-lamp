@@ -38,19 +38,7 @@ This project allows CCLE developers to automatically create a virtual image that
    * On the host computer, create a link to the dev configuration file
       * cd ~/Projects/ccle/moodle
       * ln -s local/ucla/config/shared_dev_moodle-config.php config.php
-6. Then create a file called ‘config_private.php’ in the ~/Projects/ccle/moodle directory with the database password and other details that Moodle prompted you to create for the configuration file.
-   * You can put other configuration data that should not go into version control in this file such as more passwords and salts.
-   * **Also include $CFG->divertallemailsto = ‘[your email address]’;**
-   * Be sure to remove the lines:
-
-```php
-unset($CFG);
-global $CFG;
-$CFG = new stdClass();
-...
-require_once(dirname(FILE) . '/lib/setup.php');
-```
-
+6. Then copy the file config_private-dist.php to config_private.php and change the dbuser/dbpass/wwroot/dataroot variables to the appropiate values if you are not using the default options.
 7. Import a sample database dump that includes prebuild courses, config settings, roles, and a set of test users.
    * Run the following commands to import the database dump:
       * vagrant ssh
@@ -59,7 +47,6 @@ require_once(dirname(FILE) . '/lib/setup.php');
       * use moodle;
       * source new_moodle_instance.sql;
       * exit;
-   * Change the salt of your config_private.php file to be: $CFG->passwordsaltmain = ‘a_very_long_salt_string’;
    * This database dump includes the following user accounts (login/pass):
       * admin/test
       * instructor/test
@@ -69,9 +56,7 @@ require_once(dirname(FILE) . '/lib/setup.php');
       * turned off most of the password requirements so that simple passwords can be used for test accounts
       * pre-built courses
 8. Install PHPUnit by following the directions at http://docs.moodle.org/dev/PHPUnit#Installation_of_PHPUnit_via_Composer
-   * Add the following to your config_private.php file:
-      * $CFG->phpunit_prefix = 'phpu_';
-      * $CFG->phpunit_dataroot = '/opt/phpu_moodledata';
+   * Note: To run phpunit tests, you will need to be in your Vagrant VM and in your moodle directory.
 9. On your host machine, go to http://localhost:8080/moodle and start using the CCLE Moodle codebase.
 
 ### NOTES
