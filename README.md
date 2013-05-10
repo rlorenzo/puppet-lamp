@@ -71,10 +71,11 @@ require_once(dirname(FILE) . '/lib/setup.php');
 8. Install PHPUnit by following the directions at http://docs.moodle.org/dev/PHPUnit#Installation_of_PHPUnit_via_Composer
 
 ### NOTES
-1. phpMyAdmin is viewable at: http://localhost:8080/phpmyadmin
-2. Your code on the Vagrant VM is located at /vagrant/moodle
-3. You can gain root access by doing: sudo su -
-4. If you upgrade VirtualBox your Vagrant image might not be able to mount your directory, because you need to update your VirtualBox guest additions.
+1. To shutdown the vagrant please run "vagrant suspend" (it is quicker than doing vagrant halt). To start up vagrant again run "vagrant up". To restart the image, run "vagrant reload".
+2. phpMyAdmin is viewable at: http://localhost:8080/phpmyadmin
+3. Your code on the Vagrant VM is located at /vagrant/moodle
+4. You can gain root access by doing: sudo su -
+5. If you upgrade VirtualBox your Vagrant image might not be able to mount your directory, because you need to update your VirtualBox guest additions.
    * SSH into your vagrant image: vagrant ssh
    * Go to http://download.virtualbox.org/virtualbox/ and download the latest copy of VBoxGuestAdditions\_X.iso for your version of VirtualBox onto /tmp
    * As root (sudo su -):
