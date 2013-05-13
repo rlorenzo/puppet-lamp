@@ -53,6 +53,7 @@ This project allows CCLE developers to automatically create a virtual machine th
 4. Install PHPUnit by following the directions at http://docs.moodle.org/dev/PHPUnit#Installation_of_PHPUnit_via_Composer
    * Note: To run phpunit tests, you will need to be in your Vagrant VM and in your moodle directory.
 5. On your host machine, go to http://localhost:8080/moodle and start using the CCLE Moodle codebase.
+   * Make sure you upgraded the sample database to the newest version of the CCLE Moodle codebase. Login as admin/test and go to "Site administration >Notifications" and run through the upgrade process.
 
 ### NOTES
 1. To shutdown the vagrant please run "vagrant suspend" (it is quicker than doing vagrant halt). To start up vagrant again run "vagrant up". To restart the VM, run "vagrant reload".
