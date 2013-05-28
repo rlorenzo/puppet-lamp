@@ -64,7 +64,7 @@ This project allows CCLE developers to automatically create a virtual machine th
    * SSH into your Vagrant VM: vagrant ssh
    * Go to http://download.virtualbox.org/virtualbox/ and download the latest copy of VBoxGuestAdditions\_X.iso for your version of VirtualBox onto /tmp
    * As root (sudo su -):
-      * mount -o ro -t iso9660 /tmp/VBoxGuestAdditions\_X.iso /mnt
+      * mount -o loop -t iso9660 /tmp/VBoxGuestAdditions\_X.iso /mnt
       * sh /mnt/VBoxLinuxAdditions.run
 
 ### Caveats for Windows users
