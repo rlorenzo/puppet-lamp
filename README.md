@@ -60,7 +60,7 @@ This project allows CCLE developers to automatically create a virtual machine th
 2. phpMyAdmin is viewable at: http://localhost:8080/phpmyadmin
 3. Your code on the Vagrant VM is located at /vagrant/moodle
 4. You can gain root access by doing: sudo su -
-5. If you upgrade VirtualBox your Vagrant VM might not be able to mount your directory, because you need to update your VirtualBox guest additions.
+5. If you upgrade VirtualBox or your Vagrant VM might not be able to mount your directory, because you need to update your VirtualBox guest additions.
    * SSH into your Vagrant VM: vagrant ssh
    * Go to http://download.virtualbox.org/virtualbox/ and download the latest copy of VBoxGuestAdditions\_X.iso for your version of VirtualBox onto /tmp
    * As root (sudo su -):
