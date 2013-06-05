@@ -76,4 +76,6 @@ This project allows CCLE developers to automatically create a virtual machine th
     $_dirroot_ = dirname(realpath(__FILE__)) . '/../../..'; into
     $_dirroot_ = dirname(realpath(__FILE__));
    ```
-* You will not be able to “vagrant ssh” into your Vagrant VM. You will need to use putty to ssh. But before you can do that you will need to convert the the vagrant ssh key into a putty ppk file. Please follow this link for more information: http://wazem.blogspot.com/2007/11/how-to-convert-idrsa-keys-to-putty-ppk.html
+* You will not be able to “vagrant ssh” into your Vagrant VM. You will need to use putty to ssh. But before you can do that you will need to convert the the vagrant ssh key into a putty ppk file. Please follow this link for more information:
+   * Location of vagrant ssh key: http://docs-v1.vagrantup.com/v1/docs/getting-started/ssh.html
+   * how to convert insecure_private_key to ppk: http://wazem.blogspot.com/2007/11/how-to-convert-idrsa-keys-to-putty-ppk.html
