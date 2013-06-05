@@ -5,8 +5,10 @@ This project allows CCLE developers to automatically create a virtual machine th
 * Please make sure you have “Virtualization Technology” or the equivalent setting enabled on your computer’s BIOS.
 * Install VirtualBox 4.2.12: https://www.virtualbox.org/wiki/Downloads
 * Install Vagrant 1.2.2: http://downloads.vagrantup.com
+* Install Git:  http://git-scm.com/
 * Access to the CCLE codebase. Note, you can use this Vagrant VM for vanilla Moodle, just ignore or skip the steps related to the CCLE codebase.
     * Make sure you are using SSH keys to access to the CCLE codebase: https://help.github.com/articles/generating-ssh-keys   
+* (Windows only) Install Putty and PuttyGen: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 ### Download and setup VM
 1. Check out vagrant and puppet scripts that will create the Dev VM
@@ -74,4 +76,6 @@ This project allows CCLE developers to automatically create a virtual machine th
     $_dirroot_ = dirname(realpath(__FILE__)) . '/../../..'; into
     $_dirroot_ = dirname(realpath(__FILE__));
    ```
-* You will not be able to “vagrant ssh” into your Vagrant VM. You will need to use putty to ssh. But before you can do that you will need to convert the the vagrant ssh key into a putty ppk file. Please follow this link for more information: http://wazem.blogspot.com/2007/11/how-to-convert-idrsa-keys-to-putty-ppk.html
+* You will not be able to “vagrant ssh” into your Vagrant VM. You will need to use putty to ssh. But before you can do that you will need to convert the the vagrant ssh key into a putty ppk file. Please follow this link for more information:
+   * Location of vagrant ssh key: http://docs-v1.vagrantup.com/v1/docs/getting-started/ssh.html
+   * how to convert insecure_private_key to ppk: http://wazem.blogspot.com/2007/11/how-to-convert-idrsa-keys-to-putty-ppk.html
