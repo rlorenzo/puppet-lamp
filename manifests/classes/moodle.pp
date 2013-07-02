@@ -13,6 +13,13 @@ class moodle {
     	mode   => 0777,
 	}
 	
+	# create directory to store moodle behat files
+	file { 
+   		'/opt/bht_moodledata':
+    	ensure => directory,
+    	mode   => 0777,
+	}	
+	
 	# create link to moodle source
 	file { "/var/www/html/moodle":
 		ensure => link,
