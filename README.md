@@ -54,6 +54,8 @@ This project allows CCLE developers to automatically create a virtual machine th
       * pre-built courses
 4. Install PHPUnit by following the directions at http://docs.moodle.org/dev/PHPUnit#Installation_of_PHPUnit_via_Composer
    * Note: To run phpunit tests, you will need to be in your Vagrant VM and in your moodle directory.
+5. Install Behat by following the directions at http://docs.moodle.org/dev/Acceptance_testing#Installation
+   * Note: To run Behat tests, you will need to be in your Vagrant VM and in your moodle directory.
 5. On your host machine, go to http://localhost:8080/moodle and start using the CCLE Moodle codebase.
    * Make sure you upgraded the sample database to the newest version of the CCLE Moodle codebase. Login as admin/test and go to "Site administration >Notifications" and run through the upgrade process.
 
