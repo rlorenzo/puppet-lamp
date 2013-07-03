@@ -20,6 +20,12 @@ class moodle {
     	mode   => 0777,
 	}	
 	
+	# Java & Firefox are needed for Selenium. Xvfb is for headless Firefox, see:
+	# http://www.alittlemadness.com/2008/03/05/running-selenium-headless/
+	package { "java-1.7.0-openjdk-devel": ensure => installed }
+	package { "firefox": ensure => installed } 
+	package { "xorg-x11-server-Xvfb": ensure => installed } 
+	
 	# create link to moodle source
 	file { "/var/www/html/moodle":
 		ensure => link,
