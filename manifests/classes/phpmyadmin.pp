@@ -3,15 +3,17 @@ class phpmyadmin {
   # want to use new version of phpmyadmin, but puppet doesn't
   # yet support "disablerepo" syntax, so do it via command line
   # http://projects.puppetlabs.com/issues/2247  
-  package { 'phpMyAdmin':
-  	require => Exec["install_phpmyadmin"]
-  }
+#  package { 'phpMyAdmin':
+#  	require => Exec["install_phpmyadmin"]
+#  }
 	
-  exec { "install_phpmyadmin":
-      command => "yum --disablerepo=rpmforge -y install phpMyAdmin",
-      path    => "/usr/bin/",
-      unless  => "yum list installed | grep phpMyAdmin | wc -l"
-  }  
+#  exec { "install_phpmyadmin":
+#      command => "yum --disablerepo=rpmforge -y install phpMyAdmin",
+#      path    => "/usr/bin/",
+#      unless  => "yum list installed | grep phpMyAdmin | wc -l"
+#  }  
+	
+  package { phpMyAdmin: ensure => "4.1.0-1.el6.remi" }
 	
   # make sure that config file is set
   file { "/etc/phpMyAdmin/config.inc.php":

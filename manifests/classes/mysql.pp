@@ -1,13 +1,12 @@
 class mysql {
-  package { "mysql.x86_64": ensure => installed }
-  package { "mysql-libs.x86_64": ensure => installed }
-  package { "mysql-server.x86_64": ensure => installed }
+  $mysqlpackages = [ "mysql", "mysql-libs", "mysql-server" ]
+  package { $mysqlpackages: ensure => "5.5.35-1.el6.remi" }
 
   service {
     mysqld:
     enable    => true,
     ensure    => running,
-    subscribe => Package["mysql-server.x86_64"]
+    subscribe => Package["mysql-server"]
   }
 
   file { "/etc/my.cnf":
@@ -15,7 +14,7 @@ class mysql {
       group   => root,
       mode    => 660,
       source  => "/vagrant/files/etc/my.cnf",
-      require => [ Package["mysql-server.x86_64"] ],
+      require => [ Package["mysql-server"] ],
       notify  => Service["mysqld"],
   }
 }
