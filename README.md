@@ -3,8 +3,8 @@ This project allows CCLE developers to automatically create a virtual machine th
 
 ### Prerequisites
 * Please make sure you have “Virtualization Technology” or the equivalent setting enabled on your computer’s BIOS.
-* Install VirtualBox 4.2.12: https://www.virtualbox.org/wiki/Downloads
-* Install Vagrant 1.2.2: http://downloads.vagrantup.com
+* Install VirtualBox 4.3.4: https://www.virtualbox.org/wiki/Downloads
+* Install Vagrant 1.3.5: http://downloads.vagrantup.com
 * Install Git:  http://git-scm.com/
 * Access to the CCLE codebase. Note, you can use this Vagrant VM for vanilla Moodle, just ignore or skip the steps related to the CCLE codebase.
     * Make sure you are using SSH keys to access to the CCLE codebase: https://help.github.com/articles/generating-ssh-keys   
