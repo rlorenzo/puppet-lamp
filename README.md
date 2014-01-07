@@ -40,10 +40,7 @@ This project allows CCLE developers to automatically create a virtual machine th
    * Run the following commands to import the database dump:
       * vagrant ssh
       * cd /tmp && wget https://test.ccle.ucla.edu/vagrant/new_moodle_instance.sql
-      * mysql -u root 
-      * use moodle;
-      * source new_moodle_instance.sql;
-      * exit;
+      * mysql -u root -D moodle < /tmp/new_moodle_instance.sql
    * This database dump includes the following user accounts (login/pass):
       * admin/test
       * instructor/test
