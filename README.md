@@ -72,10 +72,6 @@ This project allows CCLE developers to automatically create a virtual machine th
       * sh /mnt/VBoxLinuxAdditions.run
 
 ### Caveats for Windows users
-* Windows does not support NFS, so please comment out the following line in Vagrantfile:
-```
-config.vm.synced_folder ".", "/vagrant", type: "nfs"
-```
 * Git Bash does not support symbolic links. After you do the step of “create a link to the dev configuration file” please realize that you are essentially copying the file. Any updates made to the development configuration file will need to be manually updated by you. Also, since the file is now a copy change the following line:
 
    ```php
