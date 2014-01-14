@@ -6,8 +6,11 @@ This project allows CCLE developers to automatically create a virtual machine th
 * Install VirtualBox 4.3.4 and the Extension Pack: https://www.virtualbox.org/wiki/Download_Old_Builds_4_3
 * Install Vagrant 1.3.5: http://downloads.vagrantup.com
 * Install Git:  http://git-scm.com/
+* If running Linux, install NFS:
+    * (Ubuntu) sudo apt-get install nfs-common nfs-kernel-server
+    * (Other) sudo yum install nfs-common nfs-kernel-server
 * Access to the CCLE codebase. Note, you can use this Vagrant VM for vanilla Moodle, just ignore or skip the steps related to the CCLE codebase.
-    * Make sure you are using SSH keys to access to the CCLE codebase: https://help.github.com/articles/generating-ssh-keys   
+    * Make sure you are using SSH keys to access to the CCLE codebase: https://help.github.com/articles/generating-ssh-keys
 * (Windows only) Install Putty and PuttyGen: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 ### Download and setup VM
@@ -69,6 +72,10 @@ This project allows CCLE developers to automatically create a virtual machine th
       * sh /mnt/VBoxLinuxAdditions.run
 
 ### Caveats for Windows users
+* Windows does not support NFS, so please comment out the following line in Vagrantfile:
+```
+config.vm.synced_folder ".", "/vagrant", type: "nfs"
+```
 * Git Bash does not support symbolic links. After you do the step of “create a link to the dev configuration file” please realize that you are essentially copying the file. Any updates made to the development configuration file will need to be manually updated by you. Also, since the file is now a copy change the following line:
 
    ```php
