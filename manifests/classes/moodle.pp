@@ -26,11 +26,14 @@ class moodle {
 	package { "firefox": ensure => installed } 
 	package { "xorg-x11-server-Xvfb": ensure => installed } 
 	
-	# create link to moodle source
-	file { "/var/www/html/moodle":
-		ensure => link,
-		target => "/vagrant/moodle"	
-	}
+	# Create link to moodle source my copying moodle.conf to appropiate place.
+    file { "/etc/httpd/conf.d/moodle.conf":
+        owner   => root,
+        group   => root,
+        mode    => 660,
+        source  => "/vagrant/files/etc/httpd/conf.d/moodle.conf",
+        require => [ Package[httpd] ]
+    }
 	
 	# make sure aspell is installed
 	package { "aspell.x86_64": ensure => installed }  
