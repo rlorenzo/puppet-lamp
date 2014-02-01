@@ -13,7 +13,7 @@ class phpmyadmin {
 #      unless  => "yum list installed | grep phpMyAdmin | wc -l"
 #  }  
 	
-  package { phpMyAdmin: ensure => "4.1.4-1.el6.remi" }
+  package { phpMyAdmin: ensure => "4.1.6-1.el6.remi" }
 	
   # make sure that config file is set
   file { "/etc/phpMyAdmin/config.inc.php":
