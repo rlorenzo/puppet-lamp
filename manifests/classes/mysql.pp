@@ -1,6 +1,6 @@
 class mysql {
   $mysqlpackages = [ "mysql", "mysql-libs", "mysql-server" ]
-  package { $mysqlpackages: ensure => "5.5.35-1.el6.remi" }
+  package { $mysqlpackages: ensure => "5.5.36-1.el6.remi" }
 
   service {
     mysqld:

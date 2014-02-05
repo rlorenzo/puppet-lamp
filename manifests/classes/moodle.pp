@@ -34,6 +34,11 @@ class moodle {
         source  => "/vagrant/files/etc/httpd/conf.d/moodle.conf",
         require => [ Package[httpd] ]
     }
+    
+	# We used to link directly to the moodle directory, now we don't.
+	file { "/var/www/html/moodle":
+ 		ensure => absent
+ 	}    
 	
 	# make sure aspell is installed
 	package { "aspell.x86_64": ensure => installed }  

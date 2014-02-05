@@ -7,7 +7,11 @@ class apache {
     httpd:
     enable    => true,
     ensure    => running,
-    subscribe => [Package[httpd], File["/etc/httpd/conf/httpd.conf"], Package[php], File["/etc/php.ini"]]
+    subscribe => [Package[httpd], 
+    			  File["/etc/httpd/conf/httpd.conf"], 
+    			  Package[php], 
+    			  File["/etc/php.ini"],
+    			  File["/etc/httpd/conf.d/moodle.conf"]]
   }
 
   file { "/etc/httpd/conf/httpd.conf":
