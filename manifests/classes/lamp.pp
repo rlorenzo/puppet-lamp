@@ -7,6 +7,7 @@ class lamp {
           moodle,
           tex,
           clamav,
-		  phpmyadmin,
-          compass
+	  phpmyadmin,
+          compass,
+	  shifter
 }
