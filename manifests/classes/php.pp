@@ -8,7 +8,10 @@ class php {
   	 					require => [ Package[php] ] }
   package { php-pecl-zendopcache: ensure => "7.0.3-1.el6.remi",
   	 						      require => [ Package[php] ]}
-  
+
+  # Needed for profiling.
+  package { xhprof: ensure => "installed" }
+
   # Custom configs for php.ini and opcache.ini
   file { "/etc/php.ini":
       owner   => root,
