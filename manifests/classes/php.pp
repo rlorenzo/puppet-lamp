@@ -1,6 +1,6 @@
 class php {
 
-  package { php: ensure => '5.4.31-1.el6.remi' }
+  package { php: ensure => '5.4.32-1.el6.remi' }
   
   $phppackages = [ "php-mcrypt", "php-mysql", "php-mssql", "php-odbc", "gd", "gd-devel", 
   				   "php-gd", "php-mbstring", "php-xml", "php-soap", "php-intl", "php-xmlrpc" ]

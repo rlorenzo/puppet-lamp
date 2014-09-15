@@ -9,5 +9,6 @@ class lamp {
           clamav,
 	  phpmyadmin,
           compass,
-	  shifter
+	  shifter,
+	  mediawiki
 }
