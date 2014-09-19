@@ -1,15 +1,15 @@
 class compass {
 
     # We need ruby gem installer
-    package { 'rubygems' :
+    package { ['rubygems', 'ruby-devel'] :
         ensure => installed
     }
 
     # Install compass with gem
-    package { 'compass':
+    package { ['compass', 'rake'] :
         ensure => latest,
         provider => 'gem',
-    	require => Package['rubygems']
+    	require => [Package['rubygems'], Package['ruby-devel']]
     }
 	
     # Install sass-css-importer. Need to use exec, because need to have the --pre command.
