@@ -6,7 +6,7 @@ class compass {
     }
 
     # Install compass with gem
-    package { ['compass', 'rake'] :
+    package { ['compass', 'rake', 'json'] :
         ensure => latest,
         provider => 'gem',
     	require => [Package['rubygems'], Package['ruby-devel']]
