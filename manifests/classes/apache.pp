@@ -1,5 +1,5 @@
 class apache {
-  package { httpd: ensure => "2.2.15-31.el6.centos" }
+  package { httpd: ensure => "latest" }
   package { httpd-devel: ensure => installed }
   package { mod_ssl: ensure => installed }
 
