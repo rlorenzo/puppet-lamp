@@ -6,6 +6,7 @@ class shifter {
 
   exec { "install_shifter":
       command => "npm install shifter@0.4.6 -g",
-      path    => "/usr/bin/"
+      path    => "/usr/bin/",
+      require => [ Package["npm"] ],
   }  	
 }
