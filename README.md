@@ -3,8 +3,8 @@ This project allows CCLE developers to automatically create a virtual machine th
 
 ### Prerequisites
 * Please make sure you have “Virtualization Technology” or the equivalent setting enabled on your computer’s BIOS.
-* Install VirtualBox 4.3.4 and the Extension Pack: https://www.virtualbox.org/wiki/Download_Old_Builds_4_3
-* Install Vagrant 1.3.5: http://downloads.vagrantup.com
+* Install VirtualBox 4.3.20 and the Extension Pack: https://www.virtualbox.org/wiki/Downloads
+* Install Vagrant 1.7.2: http://downloads.vagrantup.com
 * Install Git:  http://git-scm.com/
 * If running Linux, install NFS:
     * (Ubuntu) sudo apt-get install nfs-common nfs-kernel-server
