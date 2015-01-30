@@ -3,12 +3,12 @@ class lamp {
           php,
           apache,
           mysql,
-          srdb,    
+          srdb,
           moodle,
           tex,
           clamav,
-	  phpmyadmin,
+  	  phpmyadmin,
           compass,
-	  shifter,
-	  mediawiki
+          shifter,
+          mediawiki
 }
