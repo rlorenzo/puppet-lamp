@@ -52,11 +52,15 @@ This project allows CCLE developers to automatically create a virtual machine th
       * roles copied from our production server
       * turned off most of the password requirements so that simple passwords can be used for test accounts
       * pre-built courses
-4. Install PHPUnit by following the directions at http://docs.moodle.org/dev/PHPUnit#Installation_of_PHPUnit_via_Composer
+4. Install dependancies via composer (run commands outside of VM):
+   * curl -sS http://getcomposer.org/installer | php
+   * php composer.phar update --no-dev
+   * php composer.phar install -d theme/uclashared
+5. Install PHPUnit by following the directions at http://docs.moodle.org/dev/PHPUnit#Installation_of_PHPUnit_via_Composer
    * Note: To run phpunit tests, you will need to be in your Vagrant VM and in your moodle directory.
-5. Behat
+6. Behat
    * Note: Unfortunately we cannot use the VM for Behat development. A separate instance will need to be created. Please refer to https://github.com/alroman/moodle-automated-testing/wiki for additional instructions.    
-5. On your host machine, go to http://localhost:8080/moodle and start using the CCLE Moodle codebase.
+7. On your host machine, go to http://localhost:8080/moodle and start using the CCLE Moodle codebase.
    * Make sure you upgraded the sample database to the newest version of the CCLE Moodle codebase. Login as admin/test and go to "Site administration >Notifications" and run through the upgrade process.
 
 ### NOTES
