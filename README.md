@@ -72,6 +72,7 @@ This project allows CCLE developers to automatically create a virtual machine th
    * As root (sudo su -):
       * mount -o loop -t iso9660 /tmp/VBoxGuestAdditions\_X.iso /mnt
       * sh /mnt/VBoxLinuxAdditions.run
+6. If you are having problems with not findng certain libraries or packages installed, be sure to run "vagrant provision" on your host computer.
 
 ### Caveats for Windows users
 * Git Bash does not support symbolic links. After you do the step of “create a link to the dev configuration file” please realize that you are essentially copying the file. Any updates made to the development configuration file will need to be manually updated by you. Also, since the file is now a copy change the following line:
