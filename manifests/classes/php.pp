@@ -9,9 +9,6 @@ class php {
   package { php-pecl-zendopcache: ensure => "7.0.3-1.el6.remi",
   	 						      require => [ Package[php] ]}
 
-  # Needed for profiling.
-  package { xhprof: ensure => "installed" }
-
   # Custom configs for php.ini and opcache.ini
   file { "/etc/php.ini":
       owner   => root,
@@ -35,16 +32,5 @@ class php {
       ensure  => "present",
       content => "",
       mode    => 664,
-  }
-  
-  # install xdebug
-  package { php-pecl-xdebug: ensure => installed }  
-  
-  file { "/etc/php.d/xdebug.ini":
-      owner   => root,
-      group   => root,
-      mode    => 644,
-      source  => "/vagrant/files/etc/php.d/xdebug.ini",
-      require => Package['php-pecl-xdebug'],
   }
 }
