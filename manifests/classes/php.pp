@@ -33,4 +33,15 @@ class php {
       content => "",
       mode    => 664,
   }
+
+  # install xdebug
+  package { php-pecl-xdebug: ensure => installed }  
+  
+  file { "/etc/php.d/xdebug.ini":
+      owner   => root,
+      group   => root,
+      mode    => 644,
+      source  => "/vagrant/files/etc/php.d/xdebug.ini",
+      require => Package['php-pecl-xdebug'],
+  }
 }
