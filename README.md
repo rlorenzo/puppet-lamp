@@ -24,6 +24,7 @@ This project allows CCLE developers to automatically create a virtual machine th
     * git submodule init && git submodule update
 3. Start vagrant and run the puppet scripts
    * vagrant up
+   * vagrant provision
 
 ### Pre-moodle install
 1. First ssh into the Vagrant VM: 
