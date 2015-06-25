@@ -6,7 +6,7 @@ class php {
   				   "php-gd", "php-mbstring", "php-xml", "php-soap", "php-intl", "php-xmlrpc" ]
   package { $phppackages: ensure => "installed",
   	 					require => [ Package[php] ] }
-  package { php-pecl-zendopcache: ensure => "7.0.3-1.el6.remi",
+  package { php-pecl-zendopcache: ensure => "installed",
   	 						      require => [ Package[php] ]}
 
   # Custom configs for php.ini and opcache.ini
