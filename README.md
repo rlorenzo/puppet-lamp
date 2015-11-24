@@ -55,7 +55,7 @@ This project allows CCLE developers to automatically create a virtual machine th
       * pre-built courses
 4. Install dependancies via composer (run commands outside of VM):
    * curl -sS http://getcomposer.org/installer | php
-   * php composer.phar update --no-dev
+   * php composer.phar install
    * php composer.phar install -d theme/uclashared
 5. Behat
    * Note: Unfortunately we cannot use the VM for Behat development. A separate instance will need to be created. Please refer to https://github.com/ccle/moodle-automated-testing/wiki for additional instructions.    
