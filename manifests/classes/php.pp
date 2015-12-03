@@ -2,7 +2,7 @@ class php {
 
   package { php: ensure => 'latest' }
   
-  $phppackages = [ "php-mcrypt", "php-mysql", "php-mssql", "php-odbc", "gd", "gd-devel", 
+  $phppackages = [ "php-mcrypt", "php-mysqlnd", "php-mssql", "php-odbc", "gd", "gd-devel", 
   				   "php-gd", "php-mbstring", "php-xml", "php-soap", "php-intl", "php-xmlrpc" ]
   package { $phppackages: ensure => "installed",
   	 					require => [ Package[php] ] }
