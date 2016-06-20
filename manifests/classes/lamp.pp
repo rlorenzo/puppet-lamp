@@ -8,7 +8,7 @@ class lamp {
           tex,
           clamav,
   	  phpmyadmin,
-          compass,
-          shifter,
+#          compass,
+#          shifter,
           mediawiki
 }

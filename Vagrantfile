@@ -26,8 +26,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :private_network, ip: "192.168.33.10"
   
   # Use NFS to speed up disk access.
-  nfs_setting = RUBY_PLATFORM =~ /darwin/ || RUBY_PLATFORM =~ /linux/
-  config.vm.synced_folder ".", "/vagrant", id: "vagrant-root", :nfs => nfs_setting
+  #nfs_setting = RUBY_PLATFORM =~ /darwin/ || RUBY_PLATFORM =~ /linux/
+  #config.vm.synced_folder ".", "/vagrant", id: "vagrant-root", :nfs => nfs_setting
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
