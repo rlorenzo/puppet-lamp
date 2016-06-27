@@ -1,6 +1,9 @@
 class php {
 
-  package { php: ensure => 'latest' }
+  package { php:
+	ensure => latest,
+	require => [ File["/etc/yum.repos.d/remi.repo"]]
+  }
   
   $phppackages = [ "php-mcrypt", "php-mysqlnd", "php-mssql", "php-odbc", "gd", "gd-devel", 
   				   "php-gd", "php-mbstring", "php-xml", "php-soap", "php-intl", "php-xmlrpc" ]
@@ -17,6 +20,6 @@ class php {
   }
 
   # install xdebug
-  package { php-pecl-xdebug: ensure => installed }  
-  
+  package { php-pecl-xdebug: ensure => installed }
+
 }
