@@ -10,5 +10,6 @@ class lamp {
   	  phpmyadmin,
 #          compass,
 #          shifter,
-          mediawiki
+          mediawiki,
+          unoconv
 }

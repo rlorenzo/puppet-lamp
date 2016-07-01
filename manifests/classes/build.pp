@@ -4,6 +4,7 @@ class build {
   
   # Install additional basic packages
   package { man: ensure => installed }    
+  package { git: ensure => installed }
 
 	  # Make sure certain repos are installed.
 	  package { 'epel-release':
