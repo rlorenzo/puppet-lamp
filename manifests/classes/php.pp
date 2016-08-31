@@ -18,6 +18,9 @@ class php {
       source  => "/vagrant/files/etc/php.ini",
       require => [ Package[php] ],
   }
+ 
+  # install opcache
+  package { php-pecl-zendopcache: ensure => installed }
 
   # install xdebug
   package { php-pecl-xdebug: ensure => installed }
