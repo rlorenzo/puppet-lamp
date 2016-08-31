@@ -16,7 +16,7 @@ This project allows CCLE developers to automatically create a virtual machine th
 ### Download and setup VM
 1. Check out vagrant and puppet scripts that will create the Dev VM
     * mkdir ~/Projects && cd ~/Projects
-    * git clone git://github.com/rlorenzo/puppet-lamp.git ccle
+    * git clone git@github.com:rlorenzo/puppet-lamp.git ccle
 2. Checkout CCLE the codebase from Github
     * cd ~/Projects/ccle
     * git clone git@github.com:ucla/moodle.git
@@ -40,6 +40,8 @@ This project allows CCLE developers to automatically create a virtual machine th
       * cd ~/Projects/ccle/moodle
       * ln -s local/ucla/config/shared_dev_moodle-config.php config.php
 2. Then copy the file config_private-dist.php to config_private.php and change the dbuser/dbpass/wwroot/dataroot variables to the appropiate values if you are not using the default options.
+      * cp  config_private-dist.php  config_private.php 
+      * vi config_private.php 
 3. Import a sample database dump that includes prebuild courses, config settings, roles, and a set of test users.
    * Run the following commands to import the database dump:
       * vagrant ssh
