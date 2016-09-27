@@ -29,6 +29,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #nfs_setting = RUBY_PLATFORM =~ /darwin/ || RUBY_PLATFORM =~ /linux/
   #config.vm.synced_folder ".", "/vagrant", id: "vagrant-root", :nfs => nfs_setting
 
+  # Keep using insecure key.
+  config.ssh.insert_key = false
+
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
