@@ -21,7 +21,7 @@ This project allows CCLE developers to automatically create a virtual machine th
     * cd ~/Projects/ccle
     * git clone git@github.com:ucla/moodle.git
     * cd moodle
-    * git submodule init && git submodule update
+    * git submodule update --init --recursive
 3. Start vagrant and run the puppet scripts
    * vagrant up
    * vagrant provision
