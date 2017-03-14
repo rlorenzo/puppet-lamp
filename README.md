@@ -30,7 +30,7 @@ This project allows CCLE developers to automatically create a virtual machine th
 1. First ssh into the Vagrant VM: 
    * vagrant ssh
 2. Create moodle database
-   * mysql --user=root --execute="CREATE DATABASE moodle DEFAULT CHARACTER SET UTF8 COLLATE utf8_unicode_ci;"
+   * mysql --user=root --execute="CREATE DATABASE moodle DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
 3. Create moodle user and allow them to access moodle database
    * mysql --user=root --execute="GRANT ALL PRIVILEGES ON moodle.* TO 'moodle'@'localhost' IDENTIFIED BY 'test'; FLUSH PRIVILEGES;"
       * Can replace 'test' with any other password you want to use.
