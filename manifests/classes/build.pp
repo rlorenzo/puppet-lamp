@@ -20,7 +20,7 @@ class build {
 	  package { 'rpmforge-release':
 	    provider => 'rpm',
 		ensure => present,
-		source => 'http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm'  
+		source => 'http://repository.it4i.cz/mirrors/repoforge/redhat/el6/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm'  
 	  }
 	  # Enable remi repo.
 	  file { "/etc/yum.repos.d/remi.repo":
